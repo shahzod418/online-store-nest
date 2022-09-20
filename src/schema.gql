@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @upper on FIELD_DEFINITION
+
+"""Graphics card """
+type GraphicsCard {
+  id: ID!
+  name: String!
+  vendor: String!
+}
+
+type Query {
+  graphicsCard(id: Float!): GraphicsCard!
+  graphicsCards: [GraphicsCard!]!
+}

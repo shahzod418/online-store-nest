@@ -1,14 +1,13 @@
+import { ProductsModule } from './api/products/products.module';
 import { join } from 'path';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { DirectiveLocation, GraphQLDirective } from 'graphql';
 import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
-
-import { GraphicsCardModule } from './api/graphics-card/graphics-card.module';
+import { PrismaModule } from './database/prisma.module';
 
 @Module({
   imports: [
-    GraphicsCardModule,
     GraphQLModule.forRoot<MercuriusDriverConfig>({
       driver: MercuriusDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
@@ -22,6 +21,8 @@ import { GraphicsCardModule } from './api/graphics-card/graphics-card.module';
         ],
       },
     }),
+    ProductsModule,
+    PrismaModule,
   ],
 })
 export class AppModule {}

@@ -15,8 +15,9 @@
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": false,
-    "strict": true,
-  }
+    "strict": true
+  },
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }

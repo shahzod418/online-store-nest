@@ -1,3 +1,15 @@
+# Prisma
+prisma/migrations
+prisma/dev.db
+
+# IDE
+.idea
+.vscode
+.fleet
+
+# MacOS
+.DS_Store
+
 # Logs
 logs
 *.log

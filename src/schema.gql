@@ -4,14 +4,33 @@
 
 directive @upper on FIELD_DEFINITION
 
-"""Graphics card """
-type GraphicsCard {
+type IGraphicsCard {
   id: ID!
-  name: String!
+  model: String!
   vendor: String!
 }
 
 type Query {
-  graphicsCard(id: Float!): GraphicsCard!
-  graphicsCards: [GraphicsCard!]!
+  getGraphicsCard(id: Float!): IGraphicsCard!
+  getGraphicsCards: [IGraphicsCard!]!
+}
+
+type Mutation {
+  createGraphicsCard(data: IGraphicsCardCreateInput!): IGraphicsCard!
+  updateGraphicsCard(where: IGraphicsCardWhereUniqueInput!, data: IGraphicsCardUpdateInput!): IGraphicsCard!
+  removeGraphicsCard(where: IGraphicsCardWhereUniqueInput!): IGraphicsCard!
+}
+
+input IGraphicsCardCreateInput {
+  model: String!
+  vendor: String!
+}
+
+input IGraphicsCardWhereUniqueInput {
+  id: Float!
+}
+
+input IGraphicsCardUpdateInput {
+  model: String
+  vendor: String
 }

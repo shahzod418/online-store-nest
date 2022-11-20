@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/database/prisma.service';
-import {
+
+import { PrismaService } from '@database/prisma.service';
+
+import type {
   IGraphicsCard,
   IGraphicsCardCreateInput,
   IGraphicsCardUpdateInput,
@@ -11,11 +13,11 @@ import {
 export class GraphicsCardService {
   constructor(private prisma: PrismaService) {}
 
-  async getOne(id: number): Promise<IGraphicsCard | null> {
+  async getOne(id: number): Promise<IGraphicsCard> {
     return await this.prisma.graphicsCard.findUnique({ where: { id } });
   }
 
-  async getAll(): Promise<IGraphicsCard[]> {
+  async getAll(): Promise<Array<IGraphicsCard>> {
     return await this.prisma.graphicsCard.findMany();
   }
 

@@ -1,5 +1,6 @@
 import { Field, ID, ObjectType, InputType } from '@nestjs/graphql';
-import { GraphicsCard, Prisma } from '@prisma/client';
+
+import type { GraphicsCard, Prisma } from '@prisma/client';
 
 @ObjectType()
 export class IGraphicsCard implements GraphicsCard {

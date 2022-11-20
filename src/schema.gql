@@ -10,27 +10,27 @@ type IGraphicsCard {
   vendor: String!
 }
 
-type Query {
-  getGraphicsCard(id: Float!): IGraphicsCard!
-  getGraphicsCards: [IGraphicsCard!]!
-}
-
-type Mutation {
-  createGraphicsCard(data: IGraphicsCardCreateInput!): IGraphicsCard!
-  updateGraphicsCard(where: IGraphicsCardWhereUniqueInput!, data: IGraphicsCardUpdateInput!): IGraphicsCard!
-  removeGraphicsCard(where: IGraphicsCardWhereUniqueInput!): IGraphicsCard!
-}
-
 input IGraphicsCardCreateInput {
   model: String!
   vendor: String!
+}
+
+input IGraphicsCardUpdateInput {
+  model: String
+  vendor: String
 }
 
 input IGraphicsCardWhereUniqueInput {
   id: Float!
 }
 
-input IGraphicsCardUpdateInput {
-  model: String
-  vendor: String
+type Mutation {
+  createGraphicsCard(data: IGraphicsCardCreateInput!): IGraphicsCard!
+  removeGraphicsCard(where: IGraphicsCardWhereUniqueInput!): IGraphicsCard!
+  updateGraphicsCard(data: IGraphicsCardUpdateInput!, where: IGraphicsCardWhereUniqueInput!): IGraphicsCard!
+}
+
+type Query {
+  getGraphicsCard(id: Float!): IGraphicsCard!
+  getGraphicsCards: [IGraphicsCard!]!
 }

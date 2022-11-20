@@ -2,8 +2,8 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-async function main() {
-  const card1 = await prisma.graphicsCard.upsert({
+async function main(): Promise<void> {
+  await prisma.graphicsCard.upsert({
     where: {
       id: 1,
     },
@@ -15,7 +15,7 @@ async function main() {
     },
   });
 
-  const card2 = await prisma.graphicsCard.upsert({
+  await prisma.graphicsCard.upsert({
     where: {
       id: 2,
     },
@@ -26,8 +26,6 @@ async function main() {
       vendor: 'NVIDIA',
     },
   });
-
-  console.log({ card1, card2 });
 }
 
 main()
@@ -35,6 +33,7 @@ main()
     console.error(e);
     process.exit(1);
   })
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   .finally(async () => {
     await prisma.$disconnect();
   });

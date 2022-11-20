@@ -17,7 +17,18 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": false,
-    "strict": true
+    "strict": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@root/*": ["./src/*"],
+      "@database/*": ["./src/database/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@libraries/*": ["./src/libraries/*"],
+      "@services/*": ["./src/services/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@config/*": ["./src/config/*"],
+    }
   },
-  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"],
+
 }

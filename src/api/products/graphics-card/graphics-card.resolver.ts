@@ -6,6 +6,7 @@ import {
   IGraphicsCardUpdateInput,
   IGraphicsCardWhereUniqueInput,
 } from './graphics-card.interface';
+
 import { GraphicsCardService } from './graphics-card.service';
 
 @Resolver(() => IGraphicsCard)
@@ -18,7 +19,7 @@ export class GraphicsCardResolver {
   }
 
   @Query(() => [IGraphicsCard])
-  async getGraphicsCards(): Promise<IGraphicsCard[]> {
+  async getGraphicsCards(): Promise<Array<IGraphicsCard>> {
     return await this.graphicsCardService.getAll();
   }
 

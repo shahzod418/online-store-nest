@@ -10,7 +10,7 @@ async function main(): Promise<void> {
     update: {},
     create: {
       id: 1,
-      model: 'GTX 3060',
+      model: 'RTX 3060',
       vendor: 'NVIDIA',
     },
   });
@@ -22,7 +22,7 @@ async function main(): Promise<void> {
     update: {},
     create: {
       id: 2,
-      model: 'GTX 3080',
+      model: 'RTX 3080',
       vendor: 'NVIDIA',
     },
   });

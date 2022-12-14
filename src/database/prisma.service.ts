@@ -5,6 +5,12 @@ import type { INestApplication, OnModuleInit } from '@nestjs/common';
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
+  constructor() {
+    super({
+      errorFormat: 'minimal',
+    });
+  }
+
   async onModuleInit(): Promise<void> {
     await this.$connect();
   }

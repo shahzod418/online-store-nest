@@ -25,12 +25,12 @@ input IGraphicsCardWhereUniqueInput {
 }
 
 type Mutation {
-  createGraphicsCard(data: IGraphicsCardCreateInput!): IGraphicsCard!
-  removeGraphicsCard(where: IGraphicsCardWhereUniqueInput!): IGraphicsCard!
-  updateGraphicsCard(data: IGraphicsCardUpdateInput!, where: IGraphicsCardWhereUniqueInput!): IGraphicsCard!
+  createGraphicsCard(data: IGraphicsCardCreateInput!): IGraphicsCard
+  removeGraphicsCard(where: IGraphicsCardWhereUniqueInput!): IGraphicsCard
+  updateGraphicsCard(data: IGraphicsCardUpdateInput!, where: IGraphicsCardWhereUniqueInput!): IGraphicsCard
 }
 
 type Query {
   getGraphicsCard(id: Float!): IGraphicsCard!
-  getGraphicsCards: [IGraphicsCard!]!
+  getGraphicsCards: [IGraphicsCard!] 
 }

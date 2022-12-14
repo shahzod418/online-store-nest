@@ -18,17 +18,17 @@ export class GraphicsCardResolver {
     return await this.graphicsCardService.getOne(id);
   }
 
-  @Query(() => [IGraphicsCard])
+  @Query(() => [IGraphicsCard], { nullable: true })
   async getGraphicsCards(): Promise<Array<IGraphicsCard>> {
     return await this.graphicsCardService.getAll();
   }
 
-  @Mutation(() => IGraphicsCard)
+  @Mutation(() => IGraphicsCard, { nullable: true })
   async createGraphicsCard(@Args('data') data: IGraphicsCardCreateInput): Promise<IGraphicsCard> {
-    return this.graphicsCardService.create(data);
+    return await this.graphicsCardService.create(data);
   }
 
-  @Mutation(() => IGraphicsCard)
+  @Mutation(() => IGraphicsCard, { nullable: true })
   async updateGraphicsCard(
     @Args('where') where: IGraphicsCardWhereUniqueInput,
     @Args('data') data: IGraphicsCardUpdateInput,
@@ -36,7 +36,7 @@ export class GraphicsCardResolver {
     return await this.graphicsCardService.update(where, data);
   }
 
-  @Mutation(() => IGraphicsCard)
+  @Mutation(() => IGraphicsCard, { nullable: true })
   async removeGraphicsCard(@Args('where') where: IGraphicsCardWhereUniqueInput): Promise<IGraphicsCard> {
     return await this.graphicsCardService.remove(where);
   }

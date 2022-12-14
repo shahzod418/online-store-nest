@@ -14,14 +14,14 @@ export class GraphicsCardService {
   constructor(private prisma: PrismaService) {}
 
   async getOne(id: number): Promise<IGraphicsCard> {
-    return await this.prisma.graphicsCard.findUnique({ where: { id } });
+    return await this.prisma.graphicsCard.findUniqueOrThrow({ where: { id } });
   }
 
   async getAll(): Promise<Array<IGraphicsCard>> {
     return await this.prisma.graphicsCard.findMany();
   }
 
-  async create(data: IGraphicsCardCreateInput): Promise<IGraphicsCard | null> {
+  async create(data: IGraphicsCardCreateInput): Promise<IGraphicsCard> {
     return await this.prisma.graphicsCard.create({ data });
   }
 
